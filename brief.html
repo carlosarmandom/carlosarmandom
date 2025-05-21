@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Digital - Diseño HTML para Email Marketing | Landing Your Idea</title>
+    <style>
+        /* Estilos generales */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Encabezado */
+        header {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        header img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+        
+        /* Secciones del formulario */
+        .form-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+            border-left: 5px solid #000;
+        }
+        
+        .form-section h2 {
+            color: #000;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Campos del formulario */
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #000;
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Radio buttons y checkboxes */
+        .radio-group,
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .radio-option input,
+        .checkbox-option input {
+            margin-right: 10px;
+            width: auto;
+        }
+        
+        /* Botones */
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: #000;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: #333;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        footer img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .social-icons a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Estilos para acentos de color */
+        .accent-color {
+            color: #ff0066;
+        }
+        
+        .bg-accent {
+            background-color: #ff0066;
+        }
+        
+        /* Estilos para versión impresa/PDF */
+        @media print {
+            body {
+                background-color: white;
+                font-size: 12pt;
+                color: black;
+            }
+            
+            header, footer {
+                background-color: white !important;
+                color: black !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .form-section {
+                page-break-inside: avoid;
+                background: white !important;
+                border-left: 2pt solid black;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            
+            input, select, textarea {
+                border: 1px solid #999;
+                background-color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .form-buttons, .btn {
+                display: none;
+            }
+            
+            /* Mejoras para evitar cortes en respuestas */
+            .form-group {
+                page-break-inside: avoid;
+            }
+            
+            textarea, input {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="https://page1.genspark.site/v1/base64_upload/3ccd945f3f31c18712091f6716c12e74" alt="Landing Your Idea">
+        <h1>Brief Digital - Diseño HTML para Email Marketing</h1>
+        <p>Complete este formulario para ayudarnos a entender sus necesidades y crear diseños HTML para email marketing efectivos.</p>
+    </header>
+
+    <div class="container">
+        <form id="briefForm" action="https://formsubmit.co/estrategia@landingyouridea.com" method="POST">
+            <!-- Información del Cliente -->
+            <section class="form-section">
+                <h2>Información del Cliente</h2>
+                
+                <div class="form-group">
+                    <label for="company">Nombre de la empresa *</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact">Nombre de contacto *</label>
+                    <input type="text" id="contact" name="contact" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Teléfono de contacto *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="website">Sitio web</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectName">Nombre del proyecto *</label>
+                    <input type="text" id="projectName" name="projectName" required>
+                </div>
+            </section>
+            
+            <!-- Objetivos del Email Marketing -->
+            <section class="form-section">
+                <h2>Objetivos del Email Marketing</h2>
+                
+                <div class="form-group">
+                    <label for="primaryPurpose">Propósito principal del email *</label>
+                    <select id="primaryPurpose" name="primaryPurpose" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="newsletter">Newsletter informativo</option>
+                        <option value="promotion">Promoción o descuento</option>
+                        <option value="event">Anuncio de evento</option>
+                        <option value="product">Lanzamiento de producto</option>
+                        <option value="followup">Seguimiento a clientes</option>
+                        <option value="other">Otro (especificar abajo)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="otherPurpose">Si seleccionó "Otro", por favor especifique</label>
+                    <input type="text" id="otherPurpose" name="otherPurpose">
+                </div>
+                
+                <div class="form-group">
+                    <label for="specificObjectives">Objetivos específicos de esta campaña *</label>
+                    <textarea id="specificObjectives" name="specificObjectives" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="targetAudience">Público objetivo principal *</label>
+                    <textarea id="targetAudience" name="targetAudience" required placeholder="Describa el perfil demográfico, intereses y características de su audiencia objetivo"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="successMetrics">¿Cómo medirá el éxito de este email? *</label>
+                    <textarea id="successMetrics" name="successMetrics" required placeholder="Ej.: Tasa de apertura, clics, conversiones, etc."></textarea>
+                </div>
+            </section>
+            
+            <!-- Requerimientos de Diseño -->
+            <section class="form-section">
+                <h2>Requerimientos de Diseño</h2>
+                
+                <div class="form-group">
+                    <label>¿Tiene guía de marca establecida? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="brandGuideYes" name="hasBrandGuide" value="Si" required>
+                            <label for="brandGuideYes">Sí</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="brandGuideNo" name="hasBrandGuide" value="No">
+                            <label for="brandGuideNo">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="logoUrl">URL de su logotipo (si está disponible en línea)</label>
+                    <input type="url" id="logoUrl" name="logoUrl">
+                </div>
+                
+                <div class="form-group">
+                    <label for="brandColors">Colores corporativos (códigos hexadecimales si los conoce)</label>
+                    <input type="text" id="brandColors" name="brandColors" placeholder="Ej.: #FF5500, #0055FF">
+                </div>
+                
+                <div class="form-group">
+                    <label for="designStyle">Estilo de diseño preferido *</label>
+                    <select id="designStyle" name="designStyle" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="minimal">Minimalista</option>
+                        <option value="corporate">Corporativo</option>
+                        <option value="creative">Creativo/Llamativo</option>
+                        <option value="elegant">Elegante</option>
+                        <option value="technical">Técnico/Profesional</option>
+                        <option value="playful">Divertido/Informal</option>
+                        <option value="other">Otro (especificar abajo)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="otherStyle">Si seleccionó "Otro", por favor especifique</label>
+                    <input type="text" id="otherStyle" name="otherStyle">
+                </div>
+                
+                <div class="form-group">
+                    <label for="designReference">Referencias o inspiración (URLs de diseños que le gusten)</label>
+                    <textarea id="designReference" name="designReference" placeholder="Ej.: enlaces a emails que le gusten o capturas de pantalla"></textarea>
+                </div>
+            </section>
+            
+            <!-- Contenido y Estructura -->
+            <section class="form-section">
+                <h2>Contenido y Estructura</h2>
+                
+                <div class="form-group">
+                    <label for="emailStructure">Estructura deseada del email *</label>
+                    <textarea id="emailStructure" name="emailStructure" required placeholder="Describa las secciones que desea incluir en el email y su orden"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mainHeadline">Titular principal *</label>
+                    <input type="text" id="mainHeadline" name="mainHeadline" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mainContent">Contenido principal *</label>
+                    <textarea id="mainContent" name="mainContent" required placeholder="Incluya el texto principal que desea en el email"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Elementos multimedia a incluir</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="includeImages" name="multimediaElements[]" value="Images">
+                            <label for="includeImages">Imágenes</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="includeIcons" name="multimediaElements[]" value="Icons">
+                            <label for="includeIcons">Iconos</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="includeBanners" name="multimediaElements[]" value="Banners">
+                            <label for="includeBanners">Banners</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="includeGifs" name="multimediaElements[]" value="GIFs">
+                            <label for="includeGifs">GIFs animados</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Llamados a la acción (CTA) *</label>
+                    <div class="form-group">
+                        <label for="primaryCTA">CTA Principal (texto y URL) *</label>
+                        <input type="text" id="primaryCTA" name="primaryCTA" required placeholder="Ej.: 'Comprar ahora - https://example.com/buy'">
+                    </div>
+                    <div class="form-group">
+                        <label for="secondaryCTA">CTA Secundario (si aplica)</label>
+                        <input type="text" id="secondaryCTA" name="secondaryCTA" placeholder="Ej.: 'Saber más - https://example.com/info'">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Requisitos Técnicos -->
+            <section class="form-section">
+                <h2>Requisitos Técnicos</h2>
+                
+                <div class="form-group">
+                    <label for="emailPlatform">Plataforma de email marketing que utilizará *</label>
+                    <select id="emailPlatform" name="emailPlatform" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="mailchimp">Mailchimp</option>
+                        <option value="sendgrid">SendGrid</option>
+                        <option value="activecampaign">ActiveCampaign</option>
+                        <option value="hubspot">HubSpot</option>
+                        <option value="klaviyo">Klaviyo</option>
+                        <option value="other">Otra (especificar abajo)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="otherPlatform">Si seleccionó "Otra", por favor especifique</label>
+                    <input type="text" id="otherPlatform" name="otherPlatform">
+                </div>
+                
+                <div class="form-group">
+                    <label>Compatibilidad prioritaria con clientes de email</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="gmail" name="emailClients[]" value="Gmail">
+                            <label for="gmail">Gmail</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="outlook" name="emailClients[]" value="Outlook">
+                            <label for="outlook">Outlook</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="apple" name="emailClients[]" value="Apple Mail">
+                            <label for="apple">Apple Mail</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="yahoo" name="emailClients[]" value="Yahoo Mail">
+                            <label for="yahoo">Yahoo Mail</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="mobile" name="emailClients[]" value="Mobile Apps">
+                            <label for="mobile">Apps Móviles</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialRequirements">Requisitos técnicos especiales</label>
+                    <textarea id="specialRequirements" name="specialRequirements" placeholder="Incluya cualquier requisito técnico especial que debamos considerar"></textarea>
+                </div>
+            </section>
+            
+            <!-- Plazos y Proceso -->
+            <section class="form-section">
+                <h2>Plazos y Proceso</h2>
+                
+                <div class="form-group">
+                    <label for="deadline">Fecha límite para recibir el diseño HTML *</label>
+                    <input type="date" id="deadline" name="deadline" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="launchDate">Fecha prevista de lanzamiento del email</label>
+                    <input type="date" id="launchDate" name="launchDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Información adicional o comentarios</label>
+                    <textarea id="additionalInfo" name="additionalInfo"></textarea>
+                </div>
+            </section>
+            
+            <!-- Botones del formulario -->
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Enviar Brief</button>
+                <button type="button" id="downloadPDF" class="btn btn-secondary">Descargar como PDF</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://page1.genspark.site/v1/base64_upload/3ccd945f3f31c18712091f6716c12e74" alt="Landing Your Idea">
+            
+            <div class="footer-links">
+                <a href="https://www.landingyouridea.com">Inicio</a>
+                <a href="https://www.landingyouridea.com/servicios">Servicios</a>
+                <a href="https://www.landingyouridea.com/contacto">Contacto</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Landing Your Idea. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        
+        document.getElementById('downloadPDF').addEventListener('click', function() {
+            // Ocultar botones para el PDF
+            const buttons = document.querySelector('.form-buttons');
+            buttons.style.display = 'none';
+            
+            // Crear el PDF
+            const doc = new jsPDF({
+                orientation: 'p',
+                unit: 'mm',
+                format: 'a4',
+                putOnlyUsedFonts: true
+            });
+            
+            // Capturar el formulario por secciones para mejor manejo
+            let yOffset = 0;
+            const sections = document.querySelectorAll('.form-section');
+            let promises = [];
+            
+            // Añadir título al PDF
+            doc.setFontSize(18);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Brief Digital - Diseño HTML para Email Marketing", 20, 20);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text("Landing Your Idea", 20, 28);
+            doc.line(20, 32, 190, 32);
+            yOffset = 40;
+            
+            // Procesar cada sección
+            sections.forEach((section, index) => {
+                let promise = html2canvas(section, {
+                    scale: 2,
+                    logging: false,
+                    useCORS: true
+                }).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const imgWidth = 170;
+                    const imgHeight = canvas.height * imgWidth / canvas.width;
+                    
+                    // Si no cabe en la página actual, crear nueva página
+                    if (yOffset + imgHeight > 270) {
+                        doc.addPage();
+                        yOffset = 20;
+                    }
+                    
+                    doc.addImage(imgData, 'PNG', 20, yOffset, imgWidth, imgHeight);
+                    yOffset += imgHeight + 10;
+                    
+                    return true;
+                });
+                
+                promises.push(promise);
+            });
+            
+            // Cuando todas las secciones se han procesado
+            Promise.all(promises).then(() => {
+                // Añadir pie de página
+                doc.setFontSize(8);
+                const totalPages = doc.getNumberOfPages();
+                
+                for (let i = 1; i <= totalPages; i++) {
+                    doc.setPage(i);
+                    doc.text('© 2025 Landing Your Idea - www.landingyouridea.com', 20, 285);
+                    doc.text('Página ' + i + ' de ' + totalPages, 170, 285);
+                }
+                
+                // Guardar el PDF
+                doc.save('Brief_Email_Marketing_Landing_Your_Idea.pdf');
+                
+                // Restaurar botones
+                buttons.style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html>
